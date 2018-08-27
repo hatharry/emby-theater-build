@@ -1,0 +1,13 @@
+{
+	"name": "emby-theater",
+	"src": "dist/emby-theater-linux-armv7l/",
+	"dest": "dist/installers/",
+	"arch": "armhf",
+	"icon": "./emby-theater-electron/icon.ico",
+  	"scripts": {
+    		"postinst": "./extras/postinst_script"
+  	},
+	"depends": [
+		"mpv"
+	]
+}

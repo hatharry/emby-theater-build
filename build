@@ -1,0 +1,14 @@
+#!/bin/bash
+
+npm install
+rm -r dist
+npm run buildpi
+npm run build64
+pushd dist/installers
+mv emby-theater_3.0.2_{,lite_}armhf.deb
+popd
+pushd dist/emby-theater-linux-armv7l/resources/app 
+git apply ../../../../extras/mpvpath.patch
+cp -r ../../../../extras/bin .
+popd
+npm run buildpi

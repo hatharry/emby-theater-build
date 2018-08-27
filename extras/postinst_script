@@ -1,0 +1,10 @@
+gpu_mem=$(sed -nE 's/gpu_mem=([0-9]+)/\1/p' /boot/config.txt)
+if [ -z $gpu_mem ]
+then
+	echo "adding gpu memory, please restart system"
+	echo "gpu_mem=256" >> /boot/config.txt
+elif [ $gpu_mem -lt 256 ]
+then
+	echo "adding gpu memory, please restart system"
+	sed -i 's/gpu_mem=[0-9]*/gpu_mem=256/' /boot/config.txt
+fi

@@ -1,0 +1,10 @@
+{
+	"name": "emby-theater",
+	"src": "dist/emby-theater-linux-x64/",
+	"dest": "dist/installers/",
+	"arch": "amd64",
+	"icon": "./emby-theater-electron/icon.ico",
+	"depends": [
+                "mpv"
+        ]
+}

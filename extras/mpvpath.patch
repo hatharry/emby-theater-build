@@ -1,0 +1,21 @@
+diff --git a/main.js b/main.js
+index 401e28f..9e7a87b 100644
+--- a/main.js
++++ b/main.js
+@@ -746,8 +746,14 @@
+         result.cecExePath = commandLineArguments[index];
+         index++;
+ 
+-        result.mpvPath = commandLineArguments[index];
+-        index++;
++        var isRpi = require('detect-rpi');
++        if(isRpi()){
++            result.mpvPath = commandLineArguments[index] || __dirname + '/bin/mpv';
++            index++;
++        } else {
++            result.mpvPath = commandLineArguments[index];
++            index++;
++        }
+ 
+         return result;
+     }

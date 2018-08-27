@@ -1,0 +1,16 @@
+{
+  "name": "emby-theater-build",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "buildpi": "electron-packager emby-theater-electron emby-theater --platform linux --arch armv7l --out dist/ && electron-installer-debian --config ./extras/optionspi.json",
+    "build64": "electron-packager emby-theater-electron emby-theater --platform linux --arch x64 --out dist/ && electron-installer-debian --config ./extras/optionsamd64.json"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "electron-packager": "^12.1.0",
+    "electron-installer-debian": "^0.8.1"
+  }
+}
